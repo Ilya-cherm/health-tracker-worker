@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · Health Tracker</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="panel narrow" id="loginPanel">
+      <h1>Защищенный вход</h1>
+      <p>Страница добавления анализов защищена отдельным паролем.</p>
+      <input id="adminPassword" type="password" placeholder="Пароль администратора" />
+      <button class="button" id="loginBtn">Войти</button>
+      <p id="loginError" class="error hidden">Неверный пароль</p>
+    </section>
+
+    <section class="panel hidden" id="adminPanel">
+      <div class="admin-head">
+        <div>
+          <h1>Новая запись анализа</h1>
+          <p>После сохранения графики на главной обновятся автоматически.</p>
+        </div>
+        <a class="button secondary" href="/">На главную</a>
+      </div>
+
+      <form id="recordForm" class="form-grid">
+        <label>Дата<input type="date" name="date" required /></label>
+        <label>Гемоглобин<input type="number" step="0.1" name="hemoglobin" /></label>
+        <label>Ферритин<input type="number" step="0.1" name="ferritin" /></label>
+        <label>Железо<input type="number" step="0.1" name="iron" /></label>
+        <label>B12<input type="number" step="0.1" name="b12" /></label>
+        <label>Vitamin D<input type="number" step="0.1" name="vitaminD" /></label>
+        <label>TSH<input type="number" step="0.1" name="tsh" /></label>
+        <label class="full">Комментарий<textarea name="notes" rows="4"></textarea></label>
+        <button class="button full" type="submit">Сохранить анализ</button>
+      </form>
+
+      <div class="panel inset">
+        <h2>Существующие записи</h2>
+        <div id="adminRecords"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

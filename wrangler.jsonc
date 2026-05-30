@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "health-tracker-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-30",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "HEALTH_DATA",
+      "id": "YOUR_KV_NAMESPACE_ID"
+    }
+  ],
+  "vars": {
+    "ADMIN_PASSWORD": "change-me-now"
+  }
+}
